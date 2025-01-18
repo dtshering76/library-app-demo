@@ -1,0 +1,15 @@
+<h1>Login here!</h1>
+
+{% if form.errors %}
+<p>Your username or passwor</p>
+{% if user.is_authenticated %}
+<p>You dont have proper account created!</p>
+{% endif %}
+
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+</form>
